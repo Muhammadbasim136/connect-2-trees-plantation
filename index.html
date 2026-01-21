@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGPA - Public Green Projects Agency</title>
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="30" width="40" height="15" fill="#3E3E3E"/>
+                        <rect x="10" y="35" width="5" height="10" fill="#F7F7E8"/>
+                        <rect x="20" y="35" width="5" height="10" fill="#F7F7E8"/>
+                        <rect x="30" y="35" width="5" height="10" fill="#F7F7E8"/>
+                        <circle cx="25" cy="20" r="12" fill="#8BC34A"/>
+                        <path d="M25 8 L20 18 L15 15 L18 22 L25 32 L32 22 L35 15 L30 18 Z" fill="#2E7D32"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <h1>PGPA</h1>
+                    <p>Public Green Projects Agency</p>
+                </div>
+            </div>
+            <nav class="navbar" id="navbar">
+                <button class="mobile-toggle" id="mobileToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#apply" class="nav-link">Apply for Plantation</a></li>
+                    <li><a href="#complaint" class="nav-link">Complaint</a></li>
+                    <li><a href="#donate" class="nav-link">Donate</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title">Building a Greener Tomorrow</h1>
+            <p class="hero-description">Join us in our mission to create sustainable urban environments through tree plantation, green infrastructure, and community engagement.</p>
+            <button class="btn btn-primary hero-btn" onclick="document.getElementById('apply').scrollIntoView({behavior: 'smooth'})">Apply for Free Plantation</button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Green Projects</h2>
+                <p class="section-description">Discover our ongoing and completed initiatives across the city</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Apply for Plantation Section -->
+    <section class="section apply-section" id="apply">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Apply for Free Plantation</h2>
+                <p class="section-description">Register your area for free tree plantation services</p>
+            </div>
+            <div class="form-container">
+                <form class="application-form" id="applicationForm">
+                    <div class="form-group">
+                        <label for="applyName">Full Name *</label>
+                        <input type="text" id="applyName" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="applyEmail">Email Address *</label>
+                        <input type="email" id="applyEmail" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="applyCity">City/Area *</label>
+                        <input type="text" id="applyCity" name="city" required placeholder="Enter your city or area">
+                    </div>
+                    <div class="form-group">
+                        <label for="applyTrees">Number of Trees Requested *</label>
+                        <input type="number" id="applyTrees" name="trees" required min="1" placeholder="e.g., 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="applyMessage">Additional Information</label>
+                        <textarea id="applyMessage" name="message" rows="4" placeholder="Tell us more about your plantation area..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Section -->
+    <section class="section complaint-section" id="complaint">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">File a Complaint</h2>
+                <p class="section-description">Report environmental concerns or issues in your area</p>
+            </div>
+            <div class="form-container">
+                <form class="complaint-form" id="complaintForm">
+                    <div class="form-group">
+                        <label for="complaintName">Full Name *</label>
+                        <input type="text" id="complaintName" name="name" required placeholder="Enter your full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintEmail">Email Address *</label>
+                        <input type="email" id="complaintEmail" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintType">Complaint Type *</label>
+                        <select id="complaintType" name="type" required>
+                            <option value="">Select complaint type</option>
+                            <option value="illegal-cutting">Illegal Tree Cutting</option>
+                            <option value="pollution">Environmental Pollution</option>
+                            <option value="waste-dumping">Illegal Waste Dumping</option>
+                            <option value="maintenance">Park/Green Space Maintenance</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintLocation">Location *</label>
+                        <input type="text" id="complaintLocation" name="location" required placeholder="Enter the location of the issue">
+                    </div>
+                    <div class="form-group">
+                        <label for="complaintDescription">Description *</label>
+                        <textarea id="complaintDescription" name="description" rows="5" required placeholder="Describe the issue in detail..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Complaint</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="section donation-section" id="donate">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Support Our Mission</h2>
+                <p class="section-description">Your contribution helps us plant more trees and build greener communities</p>
+            </div>
+            <div class="donation-grid">
+                <div class="donation-card">
+                    <div class="donation-icon">🌱</div>
+                    <h3 class="donation-amount">$10</h3>
+                    <p class="donation-description">Plant 5 saplings</p>
+                    <button class="btn btn-secondary donate-btn" data-amount="10">Donate $10</button>
+                </div>
+                <div class="donation-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="donation-icon">🌳</div>
+                    <h3 class="donation-amount">$25</h3>
+                    <p class="donation-description">Plant 15 saplings</p>
+                    <button class="btn btn-primary donate-btn" data-amount="25">Donate $25</button>
+                </div>
+                <div class="donation-card">
+                    <div class="donation-icon">🌲</div>
+                    <h3 class="donation-amount">$50</h3>
+                    <p class="donation-description">Plant 30 saplings</p>
+                    <button class="btn btn-secondary donate-btn" data-amount="50">Donate $50</button>
+                </div>
+                <div class="donation-card">
+                    <div class="donation-icon">🏞️</div>
+                    <h3 class="donation-amount">Custom</h3>
+                    <p class="donation-description">Choose your amount</p>
+                    <button class="btn btn-secondary donate-btn" data-amount="custom">Custom Amount</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PGPA</h3>
+                    <p>Building sustainable communities through green initiatives.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#apply">Apply</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <p>Email: info@pgpa.gov</p>
+                    <p>Phone: +1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Public Green Projects Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Donation Modal -->
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div class="modal-header">
+                <h2>Confirm Donation</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
